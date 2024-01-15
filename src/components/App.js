@@ -1,9 +1,12 @@
-import logo from "./logo.svg";
-import ".blocks/App.css";
+import logo from "../logo.svg";
+import "../blocks/App.css";
+import Header from "../Header/Header";
 
 function App() {
   return (
-   
+    <div>
+      <Header />
+    </div>
   );
 }
 
