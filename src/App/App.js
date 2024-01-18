@@ -45,12 +45,27 @@ function App() {
   return (
     <div>
       <Header />
-      <main>
+      <main className="main">
         <WeatherCard />
-        <section id="card-section"> card Section</section>
+        <section className="card_section" id="card-section">
+          {defaultClothingItems.map((x) => {
+            return <ItemCard x={x} />;
+          })}
+        </section>
       </main>
     </div>
   );
+
+  const ItemCard = ({ x }) => {
+    return (
+      <div>
+        <div>
+          <img src={x.link} className="card_image" />
+        </div>
+        <div className="card_name">{x.name}</div>
+      </div>
+    );
+  };
 }
 
 export default App;
