@@ -56,6 +56,7 @@ const Header = ({ onCreateModal }) => {
           </div>
         </div>
       </header>
+      <hr className="header__horizontal-rule "></hr>
     </div>
   );
 };

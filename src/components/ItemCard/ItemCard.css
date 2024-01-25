@@ -1,9 +1,19 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  border-radius: 100%;
+}
 .card_section {
   margin-top: 20px;
 }
-
+/* .card__name-container {
+  display: flex;
+  background-color: #ffffff;
+  height: 24px;
+  border-radius: 10px;
+  position: absolute;
+} */
 .card_name {
-  text-align: center;
 }
 
 .card_image {
