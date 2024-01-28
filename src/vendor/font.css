@@ -1,8 +1,19 @@
 @font-face {
-  font-family: "CabinetGrotesk";
-  font-style: normal;
+  font-family: "Cabinet Grotesk";
+  font-style: Bold;
   font-weight: 400;
   font-display: swap;
   src: url("./fonts/CabinetGrotesk-Bold.woff2") format("woff2"),
     url("./fonts/CabinetGrotesk-Bold.woff") format("woff");
+}
+
+@font-face {
+  color: #000;
+  font-family: "Cabinet Grotesk";
+  font-size: 16px;
+  font-style: Medium;
+  font-weight: 700;
+  line-height: 20px;
+  src: url(./fonts/CabinetGrotesk-Medium.woff2) format("woff2"),
+    url("./fonts/CabinetGrotesk-Medium.woff") format("woff");
 }

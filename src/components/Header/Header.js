@@ -35,7 +35,7 @@ const Header = ({ onCreateModal }) => {
           <div>
             <img src={headerLogo} alt="logo" />
           </div>
-          <div>
+          <div className="header__date">
             {formattedDate}
             {city}
           </div>
@@ -50,7 +50,7 @@ const Header = ({ onCreateModal }) => {
               + Add clothes
             </button>
           </div>
-          <div>Name</div>
+          <div className="header__name">Name</div>
           <div>
             <img src={avatar} alt="avatar" />
           </div>
