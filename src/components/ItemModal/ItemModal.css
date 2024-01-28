@@ -1,0 +1,58 @@
+.modal__image {
+  background-color: #ffffff;
+  width: 498px;
+  height: 610px;
+  flex-shrink: 0;
+  border-radius: 16px;
+  padding: 0px 0px 0px 0px;
+}
+
+.modal__picture {
+  height: 498px;
+  width: 498px;
+  border-radius: 20px 20px 0px 0px;
+  top: 0px;
+}
+
+.modal__button {
+  background-color: transparent;
+  cursor: pointer;
+  position: relative;
+  left: 454px;
+  top: 24px;
+  border: none;
+  width: 20px;
+  height: 20px;
+  background-image: url(../../images/closeBtn.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  padding: 0;
+}
+.modal__name {
+  color: #000;
+  font-family: "CabinetGrotesk";
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 24px;
+
+  width: fit-content;
+  height: 24px;
+  position: relative;
+  left: 32px;
+  bottom: 68px;
+}
+
+.modal__weather-type {
+  color: #000;
+  font-family: "CabinetGrotesk";
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 24px;
+  width: fit-content;
+  height: 24px;
+  position: relative;
+  left: 32px;
+  bottom: 32px;
+}
