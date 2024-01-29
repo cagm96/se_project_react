@@ -1,7 +1,7 @@
 import "./Header.css";
 import avatar from "../../images/avatar.svg";
 import headerLogo from "../../images/logo.svg";
-import { getForecastWeather } from "../../Utils/WeatherApi";
+import { getForecastWeather } from "../../utils/WeatherApi";
 
 const currentDate = new Date();
 const monthsOfYear = [
