@@ -26,7 +26,7 @@
   border: none;
   width: 20px;
   height: 20px;
-  background-image: url(../../images/closeBtn.png);
+  background-image: url(../../images/closeBtnBlack.png);
   background-repeat: no-repeat;
   background-size: contain;
   padding: 0;
@@ -37,6 +37,12 @@
   position: absolute;
   top: 28px;
   left: 28px;
+  color: #000;
+  font-family: "Cabinet Grotesk";
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 20px;
 }
 
 .modal__inputs {
@@ -48,15 +54,23 @@
 }
 .modal__label {
   padding-bottom: 8px;
-  display: flex;
-  flex-direction: column;
-  padding-bottom: 8px;
+  color: #000;
+  font-family: "Cabinet Grotesk";
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 20px;
 }
 
 .modal__radio-btns {
   position: absolute;
   left: 28px;
   top: 224px;
+}
+.modal__radio {
+}
+.modal__option {
+  padding-bottom: 8px;
 }
 .modal__submit-btn {
   position: absolute;
@@ -75,13 +89,21 @@
 }
 
 .modal__input-box {
-  padding-bottom: 8px;
+  padding-bottom: 3px;
   display: flex;
   flex-direction: column;
   border: 0;
   border-bottom: 1px solid #000000;
   width: 440px;
+  margin-bottom: 24px;
 }
 .modal__radio-title {
   margin: 0px;
+  padding-bottom: 12px;
+  color: #000;
+  font-family: "Cabinet Grotesk";
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 20px; /* 125% */
 }
