@@ -38,27 +38,45 @@ function App() {
       <Footer />
       {activeModal === "create" && (
         <ModalWithForm title="New Garment" onClose={handleCloseModal}>
-          <label>
-            name
-            <input type="text" name="name" minLength="1" maxLength="30" />
-          </label>
-          <label>
-            Image
-            <input type="url" name="link" minLength="1" maxLength="30" />
-          </label>
-          <p>Select the weather type:</p>
-          <div>
+          <div className="modal__inputs">
+            <label className="modal__label">
+              Name
+              <input
+                className="modal__input-box"
+                type="text"
+                name="name"
+                minLength="1"
+                maxLength="30"
+                placeholder="Name"
+              />
+            </label>
+            <label className="modal__label">
+              Image
+              <input
+                className="modal__input-box"
+                type="url"
+                name="link"
+                minLength="1"
+                maxLength="30"
+                placeholder="Image URL"
+              />
+            </label>
+          </div>
+          <div className="modal__radio-btns">
+            <p className="modal__radio-title">Select the weather type:</p>
             <div>
-              <input type="radio" id="hot" value="hot" />
-              <label>Hot</label>
-            </div>
-            <div>
-              <input type="radio" id="warm" value="warm" />
-              <label>Warm</label>
-            </div>
-            <div>
-              <input type="radio" id="cold" value="cold" />
-              <label>Cold</label>
+              <div>
+                <input type="radio" id="hot" value="hot" />
+                <label>Hot</label>
+              </div>
+              <div>
+                <input type="radio" id="warm" value="warm" />
+                <label>Warm</label>
+              </div>
+              <div>
+                <input type="radio" id="cold" value="cold" />
+                <label>Cold</label>
+              </div>
             </div>
           </div>
         </ModalWithForm>

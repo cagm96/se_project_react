@@ -11,8 +11,77 @@
 }
 .modal__content {
   background-color: white;
-  max-width: 496px;
-  width: 100%;
+  width: 496px;
+  height: 436px;
   border-radius: 20px;
-  padding: 34px 36px;
+  padding: 0px 0px;
+  position: relative;
+}
+.modal__button {
+  background-color: transparent;
+  cursor: pointer;
+  position: absolute;
+  left: 448px;
+  top: 20px;
+  border: none;
+  width: 20px;
+  height: 20px;
+  background-image: url(../../images/closeBtn.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  padding: 0;
+}
+
+.modal__title {
+  margin: 0px 0px;
+  position: absolute;
+  top: 28px;
+  left: 28px;
+}
+
+.modal__inputs {
+  position: absolute;
+  top: 72px;
+  left: 28px;
+  display: flex;
+  flex-direction: column;
+}
+.modal__label {
+  padding-bottom: 8px;
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 8px;
+}
+
+.modal__radio-btns {
+  position: absolute;
+  left: 28px;
+  top: 224px;
+}
+.modal__submit-btn {
+  position: absolute;
+  left: 28px;
+  top: 364px;
+  border-radius: 4px;
+  background: rgba(0, 0, 0, 0.3);
+  display: flex;
+  padding: 8px 16px;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  border: none;
+  text-decoration: #ffffff;
+  color: #ffffff;
+}
+
+.modal__input-box {
+  padding-bottom: 8px;
+  display: flex;
+  flex-direction: column;
+  border: 0;
+  border-bottom: 1px solid #000000;
+  width: 440px;
+}
+.modal__radio-title {
+  margin: 0px;
 }
