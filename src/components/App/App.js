@@ -25,10 +25,14 @@ function App() {
   };
 
   useEffect(() => {
-    getForecastWeather().then((data) => {
-      const temperature = parseWeatherData(data);
-      setTemp(temperature);
-    });
+    getForecastWeather()
+      .then((data) => {
+        const temperature = parseWeatherData(data);
+        setTemp(temperature);
+      })
+      .catch((res) => {
+        console.log(`Error ${res}`);
+      });
   }, []);
 
   return (
@@ -43,7 +47,9 @@ function App() {
           buttonText="Add garment"
         >
           <div className="modal__inputs">
-            <label className="modal__label">Name</label>
+            <label className="modal__label" for="nameInput">
+              Name
+            </label>
             <input
               className="modal__input-box"
               type="text"
@@ -51,8 +57,11 @@ function App() {
               minLength="1"
               maxLength="30"
               placeholder="Name"
+              id="nameInput"
             />
-            <label className="modal__label">Image</label>
+            <label className="modal__label" for="urlInput">
+              Image
+            </label>
             <input
               className="modal__input-box"
               type="url"
@@ -60,6 +69,7 @@ function App() {
               minLength="1"
               maxLength="30"
               placeholder="Image URL"
+              id="urlInput"
             />
           </div>
           <span class="modal__error" id="image-url"></span>
@@ -72,15 +82,28 @@ function App() {
                   type="radio"
                   id="hot"
                   value="hot"
+                  name="temperature"
                 />
                 <label className="modal__label">Hot</label>
               </div>
               <div className="modal__option">
-                <input type="radio" id="warm" value="warm" />
+                <input
+                  className="modal__radio"
+                  type="radio"
+                  id="warm"
+                  value="warm"
+                  name="temperature"
+                />
                 <label className="modal__label">Warm</label>
               </div>
               <div>
-                <input type="radio" id="cold" value="cold" />
+                <input
+                  className="modal__radio"
+                  type="radio"
+                  id="cold"
+                  value="cold"
+                  name="temperature"
+                />
                 <label className="modal__label">Cold</label>
               </div>
             </div>
