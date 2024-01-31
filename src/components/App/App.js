@@ -25,6 +25,7 @@ function App() {
     setSelectedCard(card);
   };
 
+  console.log(typeof city);
   useEffect(() => {
     getForecastWeather()
       .then((data) => {
@@ -74,7 +75,7 @@ function App() {
               id="urlInput"
             />
           </div>
-          <span class="modal__error" id="image-url"></span>
+          <span className="modal__error" id="image-url"></span>
           <div className="modal__radio-btns">
             <p className="modal__radio-title">Select the weather type:</p>
             <div>
@@ -86,7 +87,9 @@ function App() {
                   value="hot"
                   name="temperature"
                 />
-                <label className="modal__label">Hot</label>
+                <label className="modal__label" for="hot">
+                  Hot
+                </label>
               </div>
               <div className="modal__option">
                 <input
@@ -96,7 +99,9 @@ function App() {
                   value="warm"
                   name="temperature"
                 />
-                <label className="modal__label">Warm</label>
+                <label className="modal__label" for="warm">
+                  Warm
+                </label>
               </div>
               <div>
                 <input
@@ -106,7 +111,9 @@ function App() {
                   value="cold"
                   name="temperature"
                 />
-                <label className="modal__label">Cold</label>
+                <label className="modal__label" for="cold">
+                  Cold
+                </label>
               </div>
             </div>
           </div>

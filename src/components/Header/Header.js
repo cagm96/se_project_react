@@ -4,9 +4,9 @@ import headerLogo from "../../images/logo.svg";
 import { getForecastWeather } from "../../utils/WeatherApi";
 import * as constants from "../../utils/Constants";
 
-const Header = ({ onCreateModal }, city) => {
+const Header = ({ onCreateModal, city }) => {
   return (
-    <div>
+    <>
       <header className="header">
         <div className="header__logo">
           <div>
@@ -33,8 +33,7 @@ const Header = ({ onCreateModal }, city) => {
           </div>
         </div>
       </header>
-      <hr className="header__horizontal-rule "></hr>
-    </div>
+    </>
   );
 };
 

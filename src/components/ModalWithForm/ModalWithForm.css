@@ -38,7 +38,7 @@
   top: 28px;
   left: 28px;
   color: #000;
-  font-family: "Cabinet Grotesk";
+  font-family: "Cabinet Grotesk", Arial, sans-serif;
   font-size: 16px;
   font-style: normal;
   font-weight: 700;
@@ -55,7 +55,7 @@
 .modal__label {
   padding-bottom: 8px;
   color: #000;
-  font-family: "Cabinet Grotesk";
+  font-family: "Cabinet Grotesk", Arial, sans-serif;
   font-size: 16px;
   font-style: normal;
   font-weight: 700;
