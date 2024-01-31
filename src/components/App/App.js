@@ -50,7 +50,7 @@ function App() {
           buttonText="Add garment"
         >
           <div className="modal__inputs">
-            <label className="modal__label" for="nameInput">
+            <label className="modal__label" htmlFor="nameInput">
               Name
             </label>
             <input
