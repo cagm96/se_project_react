@@ -62,7 +62,7 @@ function App() {
               placeholder="Name"
               id="nameInput"
             />
-            <label className="modal__label" for="urlInput">
+            <label className="modal__label" htmlFor="urlInput">
               Image
             </label>
             <input
@@ -87,7 +87,7 @@ function App() {
                   value="hot"
                   name="temperature"
                 />
-                <label className="modal__label" for="hot">
+                <label className="modal__label" htmlFor="hot">
                   Hot
                 </label>
               </div>
@@ -99,7 +99,7 @@ function App() {
                   value="warm"
                   name="temperature"
                 />
-                <label className="modal__label" for="warm">
+                <label className="modal__label" htmlFor="warm">
                   Warm
                 </label>
               </div>
@@ -111,7 +111,7 @@ function App() {
                   value="cold"
                   name="temperature"
                 />
-                <label className="modal__label" for="cold">
+                <label className="modal__label" htmlFor="cold">
                   Cold
                 </label>
               </div>
