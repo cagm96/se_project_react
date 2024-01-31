@@ -6,34 +6,32 @@ import * as constants from "../../utils/Constants";
 
 const Header = ({ onCreateModal, city }) => {
   return (
-    <>
-      <header className="header">
-        <div className="header__logo">
-          <div>
-            <img src={headerLogo} alt="logo" />
-          </div>
-          <div className="header__date">
-            {constants.formattedDate}
-            {city}
-          </div>
+    <header className="header">
+      <div className="header__logo">
+        <div>
+          <img src={headerLogo} alt="logo" />
         </div>
-        <div className="header__avatar-logo">
-          <div>
-            <button
-              type="text"
-              className="header__button"
-              onClick={onCreateModal}
-            >
-              + Add clothes
-            </button>
-          </div>
-          <div className="header__name">Name</div>
-          <div>
-            <img src={avatar} alt="avatar" />
-          </div>
+        <div className="header__date">
+          {constants.formattedDate}
+          {city}
         </div>
-      </header>
-    </>
+      </div>
+      <div className="header__avatar-logo">
+        <div>
+          <button
+            type="text"
+            className="header__button"
+            onClick={onCreateModal}
+          >
+            + Add clothes
+          </button>
+        </div>
+        <div className="header__name">Name</div>
+        <div>
+          <img src={avatar} alt="avatar" />
+        </div>
+      </div>
+    </header>
   );
 };
 
