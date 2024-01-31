@@ -2,32 +2,9 @@ import "./Header.css";
 import avatar from "../../images/avatar.svg";
 import headerLogo from "../../images/logo.svg";
 import { getForecastWeather } from "../../utils/WeatherApi";
+import * as constants from "../../utils/Constants";
 
-const currentDate = new Date();
-const monthsOfYear = [
-  "January",
-  "February",
-  "March",
-  "April",
-  "May",
-  "June",
-  "July",
-  "August",
-  "September",
-  "October",
-  "November",
-  "December",
-];
-
-const month = monthsOfYear[currentDate.getMonth()];
-const day = currentDate.getDate();
-const formattedDate = ` ${month}, ${day} `;
-let city = "";
-
-getForecastWeather().then((res) => {
-  city = res.name;
-});
-const Header = ({ onCreateModal }) => {
+const Header = ({ onCreateModal }, city) => {
   return (
     <div>
       <header className="header">
@@ -36,7 +13,7 @@ const Header = ({ onCreateModal }) => {
             <img src={headerLogo} alt="logo" />
           </div>
           <div className="header__date">
-            {formattedDate}
+            {constants.formattedDate}
             {city}
           </div>
         </div>
