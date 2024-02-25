@@ -1,6 +1,8 @@
 import "./Header.css";
 import avatar from "../../images/avatar.svg";
 import headerLogo from "../../images/logo.svg";
+import ToggleSwitch from "../ToggleSwitch/ToggleSwitch";
+import { Link } from "react-router-dom/cjs/react-router-dom.min";
 import { getForecastWeather } from "../../utils/WeatherApi";
 import * as constants from "../../utils/Constants";
 
@@ -9,7 +11,9 @@ const Header = ({ onCreateModal, city }) => {
     <header className="header">
       <div className="header__logo">
         <div>
-          <img src={headerLogo} alt="logo" />
+          <Link to="/">
+            <img src={headerLogo} alt="logo" />
+          </Link>
         </div>
         <div className="header__date">
           {constants.formattedDate}
@@ -17,6 +21,7 @@ const Header = ({ onCreateModal, city }) => {
         </div>
       </div>
       <div className="header__avatar-logo">
+        <ToggleSwitch />
         <div>
           <button
             type="text"
@@ -26,7 +31,9 @@ const Header = ({ onCreateModal, city }) => {
             + Add clothes
           </button>
         </div>
-        <div className="header__name">Name</div>
+        <Link className="header__name" to="/profile">
+          Name
+        </Link>
         <div>
           <img src={avatar} alt="avatar" />
         </div>
