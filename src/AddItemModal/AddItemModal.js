@@ -1,7 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 import ModalWithForm from "../components/ModalWithForm/ModalWithForm";
 
 const AddItemModal = ({ handleCloseModal, onAddItem, isOpen }) => {
+  const [name, setName] = useState("");
+  const handleNameChange = (e) => {
+    console.log(e.target.value);
+  };
+
   return (
     <ModalWithForm
       title="New garment"
@@ -22,6 +27,7 @@ const AddItemModal = ({ handleCloseModal, onAddItem, isOpen }) => {
           maxLength="30"
           placeholder="Name"
           id="nameInput"
+          onChange={handleNameChange}
         />
         <label className="modal__label" htmlFor="urlInput">
           Image

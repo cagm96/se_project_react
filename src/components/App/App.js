@@ -35,6 +35,7 @@ function App() {
     if (currentTemperatureUnit === "F") setCurrentTemperatureUnit("C");
   };
   const onAddItem = (e) => {
+    e.preventDefault();
     console.log(e);
   };
 
@@ -66,9 +67,9 @@ function App() {
         <Footer />
         {activeModal === "create" && (
           <AddItemModal
-            selectedCard={selectedCard}
             onClose={handleCloseModal}
             isOpen={activeModal === "create"}
+            onAddItem={onAddItem}
           />
         )}
         {activeModal === "preview" && (
@@ -76,7 +77,6 @@ function App() {
             selectedCard={selectedCard}
             onClose={handleCloseModal}
             isOpen={activeModal === "create"}
-            onAddItem={onAddItem}
           />
         )}
       </currentTemperatureUnitContext.Provider>
