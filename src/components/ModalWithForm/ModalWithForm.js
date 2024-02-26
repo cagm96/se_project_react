@@ -1,7 +1,14 @@
 import "./ModalWithForm.css";
 
-const ModalWithForm = ({ children, buttonText, title, onClose, name }) => {
-  console.log("ModalWithForm");
+const ModalWithForm = ({
+  children,
+  buttonText,
+  title,
+  onClose,
+  name,
+  isOpen,
+  onSubmit,
+}) => {
   return (
     <div className={`modal modal_type_${name}`}>
       <div className="modal__content">
@@ -11,7 +18,7 @@ const ModalWithForm = ({ children, buttonText, title, onClose, name }) => {
           onClick={onClose}
         ></button>
         <h3 className="modal__title">{title}</h3>
-        <form>
+        <form onSubmit={onSubmit}>
           {children}
           <button className="modal__submit-btn" type="submit">
             {buttonText}
