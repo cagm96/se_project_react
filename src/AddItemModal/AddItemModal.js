@@ -5,6 +5,7 @@ const AddItemModal = ({ handleCloseModal, onAddItem, isOpen }) => {
   const [name, setName] = useState("");
   const handleNameChange = (e) => {
     console.log(e.target.value);
+    setName(e.target.value);
   };
 
   return (
@@ -13,7 +14,7 @@ const AddItemModal = ({ handleCloseModal, onAddItem, isOpen }) => {
       onClose={handleCloseModal}
       buttonText="Add garment"
       isOpen={isOpen}
-      onSubmit={onAddItem}
+      onSubmit={onAddItem({ onAddItem })}
     >
       <div className="modal__inputs">
         <label className="modal__label" htmlFor="nameInput">

@@ -16,6 +16,7 @@ function App() {
   const [activeModal, setActiveModal] = useState("");
   const [selectedCard, setSelectedCard] = useState({});
   const [temp, setTemp] = useState(0);
+  console.log(temp);
   const [city, setCity] = useState("");
   const [currentTemperatureUnit, setCurrentTemperatureUnit] = useState("F");
   console.log(currentTemperatureUnit);
@@ -37,12 +38,14 @@ function App() {
   const onAddItem = (e) => {
     e.preventDefault();
     console.log(e);
+    console.log(e.target);
   };
 
   useEffect(() => {
     getForecastWeather()
       .then((data) => {
         const temperature = parseWeatherData(data);
+        console.log(temperature);
         setTemp(temperature);
         setCity(data.name);
       })
@@ -67,7 +70,7 @@ function App() {
         <Footer />
         {activeModal === "create" && (
           <AddItemModal
-            onClose={handleCloseModal}
+            handleCloseModal={handleCloseModal}
             isOpen={activeModal === "create"}
             onAddItem={onAddItem}
           />
