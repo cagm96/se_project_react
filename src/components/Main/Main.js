@@ -7,12 +7,11 @@ import { currentTemperatureUnitContext } from "../contexts/CurrentTemperatureUni
 
 const Main = ({ weatherTemp, onSelectCard }) => {
   const { currentTemperatureUnit } = useContext(currentTemperatureUnitContext);
-  const temp = weatherTemp?.temperature?.[currentTemperatureUnit] || 999;
-  console.log(weatherTemp);
-
+  console.log(currentTemperatureUnit);
   const weatherType = useMemo(() => {
+    const temp = weatherTemp?.temperature?.[currentTemperatureUnit] || 999;
+    console.log(temp);
     if (currentTemperatureUnit === "F") {
-      console.log("cool");
       if (temp >= 86) {
         return "hot";
       } else if (temp >= 66 && temp <= 85) {
@@ -23,7 +22,7 @@ const Main = ({ weatherTemp, onSelectCard }) => {
     } else if (currentTemperatureUnit === "C") {
       console.log("duh");
     }
-  }, [weatherTemp]);
+  }, []);
   // the calculation on the weather type has to
   // change you have to add a second one
   // that will be checking for F vs C
@@ -33,10 +32,10 @@ const Main = ({ weatherTemp, onSelectCard }) => {
 
   return (
     <main className="main">
-      <WeatherCard day={false} type="cloudy" weatherTemp={temp} />
+      <WeatherCard day={false} type="cloudy" weatherTemp={weatherTemp} />
 
       <section className="card__section" id="card-section">
-        Today is {temp}° F / You may want to wear:
+        Today is {weatherTemp}° F / You may want to wear:
         <div className="card__items">
           {filteredCards.map((item) => (
             <ItemCard key={item._id} item={item} onSelectCard={onSelectCard} />

@@ -16,7 +16,7 @@ function App() {
   const [activeModal, setActiveModal] = useState("");
   const [selectedCard, setSelectedCard] = useState({});
   const [temp, setTemp] = useState(0);
-  console.log(temp);
+
   const [city, setCity] = useState("");
   const [currentTemperatureUnit, setCurrentTemperatureUnit] = useState("F");
   console.log(currentTemperatureUnit);
@@ -53,7 +53,7 @@ function App() {
         console.log(`Error ${res}`);
       });
   }, []);
-
+  console.log(temp);
   return (
     <div>
       <currentTemperatureUnitContext.Provider
