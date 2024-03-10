@@ -11,7 +11,7 @@ import { parseWeatherData } from "../../utils/WeatherApi";
 import { currentTemperatureUnitContext } from "../contexts/CurrentTemperatureUnitContext";
 import * as constant from "../../utils/Constants";
 import { Switch, Route } from "react-router-dom/cjs/react-router-dom.min";
-
+import Profile from "../Profile/Profile";
 function App() {
   const [activeModal, setActiveModal] = useState("");
   const [selectedCard, setSelectedCard] = useState({});
@@ -65,7 +65,9 @@ function App() {
           <Route exact path="/">
             <Main weatherTemp={temp} onSelectCard={handleSelectedCard} />
           </Route>
-          <Route path="/profile">profile</Route>
+          <Route path="/profile">
+            <Profile onSelectCard={handleSelectedCard} />
+          </Route>
         </Switch>
         <Footer />
         {activeModal === "create" && (
