@@ -16,7 +16,7 @@ const Main = ({ weatherTemp, onSelectCard }) => {
         return "hot";
       } else if (temp >= 66 && temp <= 85) {
         return "warm";
-      } else if (temp <= 65) {
+      } else if (temp >= 65) {
         return "cold";
       }
     } else if (currentTemperatureUnit === "C") {

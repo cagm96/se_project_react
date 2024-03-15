@@ -58,3 +58,22 @@
   top: 554px;
   bottom: 32px;
 }
+.modal__delete-btn {
+  color: #ff4d00;
+  font-family: "Cabinet Grotesk", Arial, sans-serif;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 24px;
+  background-color: transparent;
+  cursor: pointer;
+  position: absolute;
+  left: 365px;
+  top: 518px;
+  border: none;
+  width: 101px;
+  height: 20px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  padding: 0;
+}

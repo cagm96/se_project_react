@@ -1,0 +1,62 @@
+.modal__confirmation-sec {
+  background-color: white;
+  width: 670px;
+  height: 280px;
+  border-radius: 20px;
+  padding: 0px 0px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.modal__button {
+  background-color: transparent;
+  cursor: pointer;
+  position: absolute;
+  left: 630px;
+  top: 20px;
+  border: none;
+  width: 20px;
+  height: 20px;
+  background-image: url(../../images/closeBtnBlack.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  padding: 0;
+}
+.modal__cancel {
+  font-family: "Cabinet Grotesk", Arial, sans-serif;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 24px;
+  background-color: transparent;
+  cursor: pointer;
+  border: none;
+  padding: 0;
+  padding: 24px 0 0 0;
+}
+.modal__delete {
+  color: #ff4d00;
+  font-family: "Cabinet Grotesk", Arial, sans-serif;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 24px;
+  background-color: transparent;
+  cursor: pointer;
+  border: none;
+  padding: 40px 0 0 0;
+}
+
+.modal__question {
+  margin: 0px;
+  font-family: "Cabinet Grotesk", Arial, sans-serif;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 24px;
+  padding-top: 60px;
+}
+.modal__question:last-of-type {
+  padding-top: 0px;
+}

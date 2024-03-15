@@ -3,15 +3,19 @@ import Header from "../Header/Header";
 import Main from "../Main/Main";
 import Footer from "../Footer/Footer";
 import ModalWithForm from "../ModalWithForm/ModalWithForm";
-import AddItemModal from "../../AddItemModal/AddItemModal";
-import { useEffect, useState } from "react";
+import AddItemModal from "../AddItemModal/AddItemModal";
 import ItemModal from "../ItemModal/ItemModal";
+import ConfirmationModal from "../ConfirmationModal/ConfirmationModa";
+import { useEffect, useState } from "react";
+
 import { getForecastWeather } from "../../utils/WeatherApi";
 import { parseWeatherData } from "../../utils/WeatherApi";
 import { currentTemperatureUnitContext } from "../contexts/CurrentTemperatureUnitContext";
 import * as constant from "../../utils/Constants";
 import { Switch, Route } from "react-router-dom/cjs/react-router-dom.min";
 import Profile from "../Profile/Profile";
+import { item } from "../../utils/api";
+
 function App() {
   const [activeModal, setActiveModal] = useState("");
   const [selectedCard, setSelectedCard] = useState({});
@@ -35,10 +39,10 @@ function App() {
     if (currentTemperatureUnit === "C") setCurrentTemperatureUnit("F");
     if (currentTemperatureUnit === "F") setCurrentTemperatureUnit("C");
   };
-  const onAddItem = (e) => {
-    e.preventDefault();
-    console.log(e);
-    console.log(e.target);
+  const handleAddItemSubmit = (e) => {
+    // e.preventDefault();
+    // console.log(e);
+    // console.log(e.target);
   };
 
   useEffect(() => {
@@ -74,7 +78,7 @@ function App() {
           <AddItemModal
             handleCloseModal={handleCloseModal}
             isOpen={activeModal === "create"}
-            onAddItem={onAddItem}
+            onAddItem={handleAddItemSubmit}
           />
         )}
         {activeModal === "preview" && (
@@ -84,6 +88,7 @@ function App() {
             isOpen={activeModal === "create"}
           />
         )}
+        {activeModal === "" && <ConfirmationModal />}
       </currentTemperatureUnitContext.Provider>
     </div>
   );
