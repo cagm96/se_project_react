@@ -15,7 +15,7 @@ import * as constant from "../../utils/Constants";
 import { Switch, Route } from "react-router-dom/cjs/react-router-dom.min";
 import Profile from "../Profile/Profile";
 import { item } from "../../utils/api";
-
+import { getItemList } from "../../utils/api";
 function App() {
   const [activeModal, setActiveModal] = useState("");
   const [selectedCard, setSelectedCard] = useState({});
@@ -23,7 +23,16 @@ function App() {
 
   const [city, setCity] = useState("");
   const [currentTemperatureUnit, setCurrentTemperatureUnit] = useState("F");
-  console.log(currentTemperatureUnit);
+
+  const [data, setData] = useState([]);
+
+  useEffect(() => {
+    getItemList().then((responseData) => {
+      console.log(responseData);
+      setData(responseData);
+    });
+  }, []);
+
   const handleCreateModal = () => {
     setActiveModal("create");
   };
@@ -33,6 +42,19 @@ function App() {
   const handleSelectedCard = (card) => {
     setActiveModal("preview");
     setSelectedCard(card);
+  };
+
+  const openConfirmationModal = () => {
+    setActiveModal("question");
+    //  and saves a card to delete in the state
+  };
+
+  const handleCardDelete = () => {
+    // This handler makes the API call.
+    // After a successful API request,
+    // the clothingItems state needs to be updated,
+    // the modals closed,
+    // and the state containing the card should be reset.
   };
 
   const handleToggleSwitchChange = () => {
@@ -67,10 +89,14 @@ function App() {
 
         <Switch>
           <Route exact path="/">
-            <Main weatherTemp={temp} onSelectCard={handleSelectedCard} />
+            <Main
+              weatherTemp={temp}
+              onSelectCard={handleSelectedCard}
+              data={data}
+            />
           </Route>
           <Route path="/profile">
-            <Profile onSelectCard={handleSelectedCard} />
+            <Profile onSelectCard={handleSelectedCard} data={data} />
           </Route>
         </Switch>
         <Footer />
@@ -86,9 +112,15 @@ function App() {
             selectedCard={selectedCard}
             onClose={handleCloseModal}
             isOpen={activeModal === "create"}
+            openModal={openConfirmationModal}
           />
         )}
-        {activeModal === "" && <ConfirmationModal />}
+        {activeModal === "question" && (
+          <ConfirmationModal
+            onClose={handleCloseModal}
+            handleCardDelete={handleCardDelete}
+          />
+        )}
       </currentTemperatureUnitContext.Provider>
     </div>
   );

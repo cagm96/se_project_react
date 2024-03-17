@@ -1,11 +1,10 @@
-import { defaultClothingItems } from "../../utils/Constants";
 import WeatherCard from "../WeatherCard/WeatherCard";
 import ItemCard from "../ItemCard/ItemCard";
 import { useContext, useMemo } from "react";
 import "../Main/Main.css";
 import { currentTemperatureUnitContext } from "../contexts/CurrentTemperatureUnitContext";
 
-const Main = ({ weatherTemp, onSelectCard }) => {
+const Main = ({ weatherTemp, onSelectCard, data }) => {
   const { currentTemperatureUnit } = useContext(currentTemperatureUnitContext);
   console.log(currentTemperatureUnit);
   const weatherType = useMemo(() => {
@@ -23,10 +22,12 @@ const Main = ({ weatherTemp, onSelectCard }) => {
       console.log("duh");
     }
   }, []);
+
   // the calculation on the weather type has to
   // change you have to add a second one
   // that will be checking for F vs C
-  const filteredCards = defaultClothingItems.filter((item) => {
+
+  const filteredCards = data.filter((item) => {
     return item.weather.toLowerCase() === weatherType;
   });
 

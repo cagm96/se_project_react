@@ -1,19 +1,48 @@
 const baseUrl = "http://localhost:3001";
 
-// All clothing items should be fetched and placed into
-// the application state. Make a GET request:
+const handleServerResponse = (res) => {
+  return res.ok ? res.json() : Promise.reject(`Error: ${res.status}`);
+};
 
-//GET http://localhost:3001/items
-export const item = () => {
-  const items = fetch(`${baseUrl}/items`).then((res) => {
-    if (res.ok) {
-      console.log("its working?");
-      console(res);
-      return res.json();
-    } else {
-      return Promise.reject(`Error: ${res.status}`);
-    }
-  });
+export const getItemList = () => {
+  return fetch(`${baseUrl}/items`, {
+    headers: {
+      "Content-Type": "application/json",
+    },
+  }).then(handleServerResponse);
+};
+const testVar = "it Works?";
+export const test = (testVar) => {
+  return fetch(`${baseUrl}/posts`, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      testVar,
+    }),
+  }).then(handleServerResponse);
+};
 
-  return console.log("it works");
+const addItem = ({ name, weather, imageUrl }) => {
+  return fetch(`${baseUrl}/items`, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      name,
+      weather,
+      imageUrl,
+    }),
+  }).then(handleServerResponse);
+};
+
+const removeItem = (id) => {
+  return fetch(`${baseUrl}/items/${id}`, {
+    method: "DELETE",
+    headers: {
+      "Content-Type": "application/json",
+    },
+  }).then(handleServerResponse);
 };

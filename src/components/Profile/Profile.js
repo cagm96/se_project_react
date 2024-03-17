@@ -2,9 +2,8 @@ import React from "react";
 import Avatar from "../../images/avatar.svg";
 import "../Profile/Profile.css";
 import ItemCard from "../ItemCard/ItemCard";
-import { defaultClothingItems } from "../../utils/Constants";
 
-const Profile = ({ onSelectCard }) => {
+const Profile = ({ onSelectCard, data }) => {
   return (
     <div className="profile">
       <div className="profile__side-bar">
@@ -24,7 +23,7 @@ const Profile = ({ onSelectCard }) => {
             </button>
           </div>
           <section className="profile__card-items">
-            {defaultClothingItems.map((item) => (
+            {data.map((item) => (
               <ItemCard
                 key={item._id}
                 item={item}
