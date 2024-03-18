@@ -26,7 +26,6 @@ const Main = ({ weatherTemp, onSelectCard, data }) => {
   // the calculation on the weather type has to
   // change you have to add a second one
   // that will be checking for F vs C
-
   const filteredCards = data.filter((item) => {
     return item.weather.toLowerCase() === weatherType;
   });

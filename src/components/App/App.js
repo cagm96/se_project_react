@@ -22,14 +22,11 @@ function App() {
   const [city, setCity] = useState("");
   const [currentTemperatureUnit, setCurrentTemperatureUnit] = useState("F");
 
-  const [data, setData] = useState([]);
-  const [name, setName] = useState("");
-  const [imageUrl, setImageUrl] = useState("");
-  const [weather, setWeather] = useState("");
+  const [clothingItems, setClothingItems] = useState([]);
 
   useEffect(() => {
     getItemList().then((responseData) => {
-      setData(responseData);
+      setClothingItems(responseData);
     });
   }, []);
 
@@ -56,12 +53,11 @@ function App() {
     // the modals closed,
     // and the state containing the card should be reset.
 
-    // removeItem(selectedCard._id).then((responseData) => {
-    //   handleCloseModal();
-    //   divToRemove.remove();
-    // });
-    const divToRemove = document.querySelectorAll(selectedCard._id);
-    console.log(divToRemove);
+    removeItem(selectedCard._id).then((responseData) => {
+      handleCloseModal();
+    });
+    // const divToRemove = document.querySelectorAll(selectedCard._id);
+    // console.log(divToRemove);
   };
 
   const handleToggleSwitchChange = () => {
@@ -69,22 +65,10 @@ function App() {
     if (currentTemperatureUnit === "F") setCurrentTemperatureUnit("C");
   };
   const cardList = document.querySelector(".card__items");
-  const handleAddItemSubmit = (e) => {
-    cardList.append(
-      <div className="card">
-        <div>
-          <img
-            src={imageUrl}
-            alt={name}
-            className="card__image"
-            //onClick={() => onSelectCard(item)}
-          />
-        </div>
-        <h3 className="card__name-container">
-          <div className="card__name">{name}</div>
-        </h3>
-      </div>
-    );
+  const handleAddItemSubmit = (data) => {
+    addItem(data).then((res) => {
+      setClothingItems(data);
+    });
   };
 
   useEffect(() => {
@@ -112,11 +96,11 @@ function App() {
             <Main
               weatherTemp={temp}
               onSelectCard={handleSelectedCard}
-              data={data}
+              data={clothingItems}
             />
           </Route>
           <Route path="/profile">
-            <Profile onSelectCard={handleSelectedCard} data={data} />
+            <Profile onSelectCard={handleSelectedCard} data={clothingItems} />
           </Route>
         </Switch>
         <Footer />
@@ -125,9 +109,6 @@ function App() {
             handleCloseModal={handleCloseModal}
             isOpen={activeModal === "create"}
             onAddItem={handleAddItemSubmit}
-            setName={setName}
-            setImageUrl={setImageUrl}
-            setWeather={setWeather}
           />
         )}
         {activeModal === "preview" && (
