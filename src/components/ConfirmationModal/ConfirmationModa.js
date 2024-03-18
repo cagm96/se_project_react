@@ -1,6 +1,6 @@
 import "../ConfirmationModal/ConfirmationModal.css";
 
-const ConfirmationModal = ({ onClose, handleCardDelete }) => {
+const ConfirmationModal = ({ selectedCard, onClose, handleCardDelete }) => {
   return (
     <div className="modal">
       <div className="modal__confirmation-sec">
@@ -9,7 +9,9 @@ const ConfirmationModal = ({ onClose, handleCardDelete }) => {
           Are you sure you want to delete this item?
         </h3>
         <h3 className="modal__question">This action is irreversible.</h3>
-        <button className="modal__delete">Yes, delete item</button>
+        <button className="modal__delete" onClick={handleCardDelete}>
+          Yes, delete item
+        </button>
         <button className="modal__cancel" onClick={onClose}>
           Cancel
         </button>

@@ -1,13 +1,26 @@
 import React, { useState } from "react";
 import ModalWithForm from "../ModalWithForm/ModalWithForm";
 
-const AddItemModal = ({ handleCloseModal, onAddItem, isOpen }) => {
-  const [name, setName] = useState("");
+const AddItemModal = ({
+  handleCloseModal,
+  onAddItem,
+  isOpen,
+  setName,
+  setImageUrl,
+  setWeather,
+}) => {
+  // const [name, setName] = useState("");
   const handleNameChange = (e) => {
     console.log(e.target.value);
     setName(e.target.value);
   };
+  const handleUrlChange = (e) => {
+    setImageUrl(e.target.value);
+  };
 
+  const handleWeatherChange = (e) => {
+    setWeather(e.target.value);
+  };
   return (
     <ModalWithForm
       title="New garment"
@@ -41,6 +54,7 @@ const AddItemModal = ({ handleCloseModal, onAddItem, isOpen }) => {
           maxLength="30"
           placeholder="Image URL"
           id="urlInput"
+          onChange={handleUrlChange}
         />
       </div>
       <span className="modal__error" id="image-url"></span>
@@ -54,6 +68,7 @@ const AddItemModal = ({ handleCloseModal, onAddItem, isOpen }) => {
               id="hot"
               value="hot"
               name="temperature"
+              onChange={handleWeatherChange}
             />
             <label className="modal__label" htmlFor="hot">
               Hot
@@ -66,6 +81,7 @@ const AddItemModal = ({ handleCloseModal, onAddItem, isOpen }) => {
               id="warm"
               value="warm"
               name="temperature"
+              onChange={handleWeatherChange}
             />
             <label className="modal__label" htmlFor="warm">
               Warm
@@ -78,6 +94,7 @@ const AddItemModal = ({ handleCloseModal, onAddItem, isOpen }) => {
               id="cold"
               value="cold"
               name="temperature"
+              onChange={handleWeatherChange}
             />
             <label className="modal__label" htmlFor="cold">
               Cold
@@ -90,3 +107,34 @@ const AddItemModal = ({ handleCloseModal, onAddItem, isOpen }) => {
 };
 
 export default AddItemModal;
+
+// import React from 'react';
+// import './FoodAdder.css';
+
+// class FoodAdder extends React.Component {
+//   constructor(props) {
+//     super(props);
+//     this.state = {
+//       food: '',
+//       calories: ''
+//     };
+//     this.handleChange = this.handleChange.bind(this);
+//     this.handleSubmit = this.handleSubmit.bind(this);
+//   }
+
+//   handleChange = (e) => {
+//     this.setState({
+//       [e.target.name]: e.target.value
+//     })
+//   }
+
+//   handleSubmit = (e) => {
+//     e.preventDefault();
+
+//     this.setState({
+//       food: '',
+//       calories: ''
+//     })
+
+//     this.props.handleSubmit(this.state.food, this.state.calories);
+//   }

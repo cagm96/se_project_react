@@ -2,7 +2,7 @@ import "../ItemModal/ItemModal.css";
 
 const ItemModal = ({ selectedCard, onClose, openModal }) => {
   return (
-    <div className={`modal `}>
+    <div className={`modal `} id={selectedCard._id}>
       <div className="modal__image">
         <button
           type="button"

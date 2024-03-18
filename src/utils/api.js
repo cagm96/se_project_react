@@ -11,20 +11,8 @@ export const getItemList = () => {
     },
   }).then(handleServerResponse);
 };
-const testVar = "it Works?";
-export const test = (testVar) => {
-  return fetch(`${baseUrl}/posts`, {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify({
-      testVar,
-    }),
-  }).then(handleServerResponse);
-};
 
-const addItem = ({ name, weather, imageUrl }) => {
+export const addItem = ({ name, weather, imageUrl }) => {
   return fetch(`${baseUrl}/items`, {
     method: "POST",
     headers: {
@@ -38,7 +26,7 @@ const addItem = ({ name, weather, imageUrl }) => {
   }).then(handleServerResponse);
 };
 
-const removeItem = (id) => {
+export const removeItem = (id) => {
   return fetch(`${baseUrl}/items/${id}`, {
     method: "DELETE",
     headers: {

@@ -2,20 +2,18 @@ import "./App.css";
 import Header from "../Header/Header";
 import Main from "../Main/Main";
 import Footer from "../Footer/Footer";
-import ModalWithForm from "../ModalWithForm/ModalWithForm";
 import AddItemModal from "../AddItemModal/AddItemModal";
 import ItemModal from "../ItemModal/ItemModal";
 import ConfirmationModal from "../ConfirmationModal/ConfirmationModa";
 import { useEffect, useState } from "react";
-
 import { getForecastWeather } from "../../utils/WeatherApi";
 import { parseWeatherData } from "../../utils/WeatherApi";
 import { currentTemperatureUnitContext } from "../contexts/CurrentTemperatureUnitContext";
-import * as constant from "../../utils/Constants";
 import { Switch, Route } from "react-router-dom/cjs/react-router-dom.min";
 import Profile from "../Profile/Profile";
-import { item } from "../../utils/api";
-import { getItemList } from "../../utils/api";
+import { getItemList, removeItem, addItem } from "../../utils/api";
+import ItemCard from "../ItemCard/ItemCard";
+
 function App() {
   const [activeModal, setActiveModal] = useState("");
   const [selectedCard, setSelectedCard] = useState({});
@@ -25,10 +23,12 @@ function App() {
   const [currentTemperatureUnit, setCurrentTemperatureUnit] = useState("F");
 
   const [data, setData] = useState([]);
+  const [name, setName] = useState("");
+  const [imageUrl, setImageUrl] = useState("");
+  const [weather, setWeather] = useState("");
 
   useEffect(() => {
     getItemList().then((responseData) => {
-      console.log(responseData);
       setData(responseData);
     });
   }, []);
@@ -55,16 +55,36 @@ function App() {
     // the clothingItems state needs to be updated,
     // the modals closed,
     // and the state containing the card should be reset.
+
+    // removeItem(selectedCard._id).then((responseData) => {
+    //   handleCloseModal();
+    //   divToRemove.remove();
+    // });
+    const divToRemove = document.querySelectorAll(selectedCard._id);
+    console.log(divToRemove);
   };
 
   const handleToggleSwitchChange = () => {
     if (currentTemperatureUnit === "C") setCurrentTemperatureUnit("F");
     if (currentTemperatureUnit === "F") setCurrentTemperatureUnit("C");
   };
+  const cardList = document.querySelector(".card__items");
   const handleAddItemSubmit = (e) => {
-    // e.preventDefault();
-    // console.log(e);
-    // console.log(e.target);
+    cardList.append(
+      <div className="card">
+        <div>
+          <img
+            src={imageUrl}
+            alt={name}
+            className="card__image"
+            //onClick={() => onSelectCard(item)}
+          />
+        </div>
+        <h3 className="card__name-container">
+          <div className="card__name">{name}</div>
+        </h3>
+      </div>
+    );
   };
 
   useEffect(() => {
@@ -105,6 +125,9 @@ function App() {
             handleCloseModal={handleCloseModal}
             isOpen={activeModal === "create"}
             onAddItem={handleAddItemSubmit}
+            setName={setName}
+            setImageUrl={setImageUrl}
+            setWeather={setWeather}
           />
         )}
         {activeModal === "preview" && (
@@ -117,6 +140,7 @@ function App() {
         )}
         {activeModal === "question" && (
           <ConfirmationModal
+            selectedCard={selectedCard}
             onClose={handleCloseModal}
             handleCardDelete={handleCardDelete}
           />
