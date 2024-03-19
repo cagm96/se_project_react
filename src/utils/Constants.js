@@ -10,6 +10,11 @@ export const weatherOptions = [
     type: "cloudy",
   },
   {
+    url: require("../images/day/fog.svg").default,
+    day: true,
+    type: "fog",
+  },
+  {
     url: require("../images/night/cloudy.svg").default,
     day: false,
     type: "cloudy",

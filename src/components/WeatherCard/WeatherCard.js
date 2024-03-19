@@ -2,7 +2,10 @@ import "./WeatherCard.css";
 import { currentTemperatureUnitContext } from "../../contexts/CurrentTemperatureUnitContext";
 import { weatherOptions } from "../../utils/Constants";
 
-const WeatherCard = ({ day = true, type = "sunny", weatherTemp = 0 }) => {
+const WeatherCard = ({ day, type, weatherTemp }) => {
+  // {
+  //   (day = true), (type = "sunny"), (weatherTemp = 0);
+  // }
   const imageSrc = weatherOptions.filter((i) => {
     return i.day === day && i.type === type;
   });
