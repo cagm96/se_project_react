@@ -8,7 +8,7 @@ import ConfirmationModal from "../ConfirmationModal/ConfirmationModa";
 import { useEffect, useState } from "react";
 import { getForecastWeather } from "../../utils/WeatherApi";
 import { parseWeatherData } from "../../utils/WeatherApi";
-import { currentTemperatureUnitContext } from "../contexts/CurrentTemperatureUnitContext";
+import { currentTemperatureUnitContext } from "../../contexts/CurrentTemperatureUnitContext";
 import { Switch, Route } from "react-router-dom/cjs/react-router-dom.min";
 import Profile from "../Profile/Profile";
 import { getItemList, removeItem, addItem } from "../../utils/api";
