@@ -17,7 +17,8 @@ const AddItemModal = ({ handleCloseModal, onAddItem, isOpen }) => {
     setWeather(e.target.value);
   };
 
-  const handleSubmit = () => {
+  const handleSubmit = (e) => {
+    e.preventDafult();
     onAddItem({ name: name, imageUrl: imageUrl, weather: weather });
   };
   return (
@@ -50,7 +51,6 @@ const AddItemModal = ({ handleCloseModal, onAddItem, isOpen }) => {
           type="url"
           name="link"
           minLength="1"
-          maxLength="30"
           placeholder="Image URL"
           id="urlInput"
           onChange={handleUrlChange}

@@ -55,8 +55,10 @@ function App() {
 
     removeItem(selectedCard._id).then((responseData) => {
       handleCloseModal();
+      const card = document.getElementById(selectedCard._id);
+      card.remove();
     });
-    // const divToRemove = document.querySelectorAll(selectedCard._id);
+
     // console.log(divToRemove);
   };
 
@@ -100,7 +102,11 @@ function App() {
             />
           </Route>
           <Route path="/profile">
-            <Profile onSelectCard={handleSelectedCard} data={clothingItems} />
+            <Profile
+              openModal={handleCreateModal}
+              data={clothingItems}
+              onSelectCard={handleSelectedCard}
+            />
           </Route>
         </Switch>
         <Footer />

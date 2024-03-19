@@ -3,7 +3,7 @@ import Avatar from "../../images/avatar.svg";
 import "../Profile/Profile.css";
 import ItemCard from "../ItemCard/ItemCard";
 
-const Profile = ({ onSelectCard, data }) => {
+const Profile = ({ openModal, data, onSelectCard }) => {
   return (
     <div className="profile">
       <div className="profile__side-bar">
@@ -14,11 +14,7 @@ const Profile = ({ onSelectCard, data }) => {
         <div>
           <div className="profile__cards-header">
             <h3 className="profile__card-title">Your items</h3>
-            <button
-              type="text"
-              className="profile__button"
-              onClick={onSelectCard}
-            >
+            <button type="text" className="profile__button" onClick={openModal}>
               + Add new
             </button>
           </div>
