@@ -101,6 +101,24 @@
       "name": "T-Shirt",
       "weather": "hot",
       "imageUrl": "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/wtwr-project/T-Shirt.png?etag=44ed1963c44ab19cd2f5011522c5fc09"
+    },
+    {
+      "name": "Yosemite Valley",
+      "weather": "hot",
+      "imageUrl": "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/around-project/yosemite.jpg",
+      "_id": 17
+    },
+    {
+      "name": "Yosemite Valley",
+      "weather": "hot",
+      "imageUrl": "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/around-project/yosemite.jpg",
+      "_id": 18
+    },
+    {
+      "name": "Yosemite Valley",
+      "weather": "hot",
+      "imageUrl": "https://th-thumbnailer.cdn-si-edu.com/C1UOdYgsTDPNWYLeGb9yq9oV-js=/1000x750/filters:no_upscale()/https://tf-cmsv2-smithsonianmag-media.s3.amazonaws.com/filer/ed/c7/edc72864-ec48-4e50-9d96-62179ea7921b/42-56717526.jpg",
+      "_id": 19
     }
   ]
 }

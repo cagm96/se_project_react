@@ -18,6 +18,7 @@ function App() {
   const [activeModal, setActiveModal] = useState("");
   const [selectedCard, setSelectedCard] = useState({});
   const [temp, setTemp] = useState(0);
+  const [tempUnits, setTempUnits] = useState({});
 
   const [city, setCity] = useState("");
   const [currentTemperatureUnit, setCurrentTemperatureUnit] = useState("F");
@@ -58,8 +59,6 @@ function App() {
       const card = document.getElementById(selectedCard._id);
       card.remove();
     });
-
-    // console.log(divToRemove);
   };
 
   const handleToggleSwitchChange = () => {
@@ -76,16 +75,19 @@ function App() {
   useEffect(() => {
     getForecastWeather()
       .then((data) => {
+        console.log(data);
         const temperature = parseWeatherData(data);
-        console.log(temperature);
-        setTemp(temperature);
+
+        setTempUnits(temperature);
+
+        setTemp(temperature.F);
         setCity(data.name);
       })
       .catch((res) => {
         console.log(`Error ${res}`);
       });
   }, []);
-  console.log(temp);
+  console.log(tempUnits);
   return (
     <div>
       <currentTemperatureUnitContext.Provider
@@ -96,6 +98,7 @@ function App() {
         <Switch>
           <Route exact path="/">
             <Main
+              tempUnits={tempUnits}
               weatherTemp={temp}
               onSelectCard={handleSelectedCard}
               data={clothingItems}

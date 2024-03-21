@@ -1,7 +1,7 @@
 import "./Header.css";
 import avatar from "../../images/avatar.svg";
 import headerLogo from "../../images/logo.svg";
-import ToggleSwitch from "../ToggleSwitch/ToggleSwitch";
+import ToggleSwitch from "../WeatherCard/ToggleSwitch/ToggleSwitch";
 import { Link } from "react-router-dom/cjs/react-router-dom.min";
 import { getForecastWeather } from "../../utils/WeatherApi";
 import * as constants from "../../utils/Constants";
