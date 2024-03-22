@@ -77,10 +77,8 @@ function App() {
       .then((data) => {
         console.log(data);
         const temperature = parseWeatherData(data);
-
-        setTempUnits(temperature);
-
-        setTemp(temperature.F);
+        console.log(temperature);
+        setTemp(temperature);
         setCity(data.name);
       })
       .catch((res) => {
@@ -98,7 +96,6 @@ function App() {
         <Switch>
           <Route exact path="/">
             <Main
-              tempUnits={tempUnits}
               weatherTemp={temp}
               onSelectCard={handleSelectedCard}
               data={clothingItems}

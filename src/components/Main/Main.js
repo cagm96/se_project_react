@@ -4,16 +4,11 @@ import { useContext, useMemo } from "react";
 import "../Main/Main.css";
 import { currentTemperatureUnitContext } from "../../contexts/CurrentTemperatureUnitContext";
 
-const Main = ({ tempUnits, weatherTemp, onSelectCard, data }) => {
+const Main = ({ weatherTemp, onSelectCard, data }) => {
   const { currentTemperatureUnit } = useContext(currentTemperatureUnitContext);
   console.log(weatherTemp);
-  // const temp = weatherTemp?.temperature?.[currentTemperatureUnit] || 999;
-  const [test, setTemp] = useContext("");
-  const temp =
-    currentTemperatureUnit === "F"
-      ? setTemp(tempUnits.F)
-      : setTemp(tempUnits.C);
-  // console.log(temp);
+  const temp = weatherTemp?.[currentTemperatureUnit] || 999;
+
   const weatherType = useMemo(() => {
     if (currentTemperatureUnit === "F") {
       if (temp >= 86) {
