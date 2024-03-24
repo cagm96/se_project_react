@@ -17,8 +17,7 @@ import ItemCard from "../ItemCard/ItemCard";
 function App() {
   const [activeModal, setActiveModal] = useState("");
   const [selectedCard, setSelectedCard] = useState({});
-  const [temp, setTemp] = useState(0);
-  const [tempUnits, setTempUnits] = useState({});
+  const [temp, setTemp] = useState([]);
 
   const [city, setCity] = useState("");
   const [currentTemperatureUnit, setCurrentTemperatureUnit] = useState("F");
@@ -77,6 +76,7 @@ function App() {
       .then((data) => {
         console.log(data);
         const temperature = parseWeatherData(data);
+
         console.log(temperature);
         setTemp(temperature);
         setCity(data.name);
@@ -85,7 +85,7 @@ function App() {
         console.log(`Error ${res}`);
       });
   }, []);
-  console.log(tempUnits);
+
   return (
     <div>
       <currentTemperatureUnitContext.Provider
