@@ -6,7 +6,7 @@ import { currentTemperatureUnitContext } from "../../contexts/CurrentTemperature
 
 const Main = ({ weatherTemp, onSelectCard, data }) => {
   const { currentTemperatureUnit } = useContext(currentTemperatureUnitContext);
-
+  console.log(currentTemperatureUnit);
   const temp = weatherTemp[currentTemperatureUnit];
   console.log(temp);
   const weatherType = useMemo(() => {
@@ -27,8 +27,8 @@ const Main = ({ weatherTemp, onSelectCard, data }) => {
         return "cold";
       }
     }
-    console.log(temp);
   }, []);
+  console.log(weatherType);
 
   // the calculation on the weather type has to
   // change you have to add a second one

@@ -12,7 +12,6 @@ import { currentTemperatureUnitContext } from "../../contexts/CurrentTemperature
 import { Switch, Route } from "react-router-dom/cjs/react-router-dom.min";
 import Profile from "../Profile/Profile";
 import { getItemList, removeItem, addItem } from "../../utils/api";
-import ItemCard from "../ItemCard/ItemCard";
 
 function App() {
   const [activeModal, setActiveModal] = useState("");
