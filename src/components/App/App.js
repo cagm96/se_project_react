@@ -25,6 +25,7 @@ function App() {
 
   useEffect(() => {
     getItemList().then((responseData) => {
+      console.log(responseData);
       setClothingItems(responseData);
     });
   }, []);
