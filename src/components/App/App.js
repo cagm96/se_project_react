@@ -85,7 +85,7 @@ function App() {
         console.log(`Error ${res}`);
       });
   }, []);
-
+  console.log(temp);
   return (
     <div>
       <currentTemperatureUnitContext.Provider

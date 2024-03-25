@@ -6,8 +6,8 @@ import { currentTemperatureUnitContext } from "../../contexts/CurrentTemperature
 import { useEffect, useState } from "react";
 const Main = ({ weatherTemp, onSelectCard, data }) => {
   const { currentTemperatureUnit } = useContext(currentTemperatureUnitContext);
-  console.log(currentTemperatureUnit);
   const temp = weatherTemp[currentTemperatureUnit];
+
   console.log(temp);
   const weatherType = useMemo(() => {
     if (currentTemperatureUnit === "F") {
@@ -27,7 +27,7 @@ const Main = ({ weatherTemp, onSelectCard, data }) => {
         return "cold";
       }
     }
-  }, []);
+  }, [currentTemperatureUnit, temp]);
   console.log(weatherType);
 
   // the calculation on the weather type has to
