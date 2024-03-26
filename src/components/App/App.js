@@ -66,6 +66,7 @@ function App() {
   };
   const cardList = document.querySelector(".card__items");
   const handleAddItemSubmit = (data) => {
+    data.preventDefault();
     addItem(data).then((res) => {
       setClothingItems(data);
     });

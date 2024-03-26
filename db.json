@@ -79,12 +79,6 @@
       "imageUrl": "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/wtwr-project/Skirt.png?etag=27a6bea7e1b63218820d615876fa31d1"
     },
     {
-      "_id": 13,
-      "name": "Sneakers",
-      "weather": "warm",
-      "imageUrl": "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/wtwr-project/Sneakers.png?etag=3efeec41c1c78b8afe26859ca7fa7b6f"
-    },
-    {
       "_id": 14,
       "name": "Sunglasses",
       "weather": "hot",
@@ -101,6 +95,54 @@
       "name": "T-Shirt",
       "weather": "hot",
       "imageUrl": "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/wtwr-project/T-Shirt.png?etag=44ed1963c44ab19cd2f5011522c5fc09"
+    },
+    {
+      "name": "Yosemite Valley",
+      "weather": "warm",
+      "imageUrl": "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/around-project/yosemite.jpg",
+      "_id": 22
+    },
+    {
+      "name": "Yosemite Valley",
+      "weather": "warm",
+      "imageUrl": "https://th-thumbnailer.cdn-si-edu.com/C1UOdYgsTDPNWYLeGb9yq9oV-js=/1000x750/filters:no_upscale()/https://tf-cmsv2-smithsonianmag-media.s3.amazonaws.com/filer/ed/c7/edc72864-ec48-4e50-9d96-62179ea7921b/42-56717526.jpg",
+      "_id": 23
+    },
+    {
+      "name": "Yosemite Valley",
+      "weather": "warm",
+      "imageUrl": "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/around-project/yosemite.jpg",
+      "_id": 24
+    },
+    {
+      "name": "Yosemite Valley",
+      "weather": "warm",
+      "imageUrl": "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/around-project/yosemite.jpg",
+      "_id": 25
+    },
+    {
+      "name": "Yosemite Valley",
+      "weather": "warm",
+      "imageUrl": "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/around-project/yosemite.jpg",
+      "_id": 26
+    },
+    {
+      "name": "Yosemite Valley",
+      "weather": "warm",
+      "imageUrl": "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/around-project/yosemite.jpg",
+      "_id": 27
+    },
+    {
+      "name": "Yosemite Valley",
+      "weather": "warm",
+      "imageUrl": "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/around-project/yosemite.jpg",
+      "_id": 28
+    },
+    {
+      "name": "Yosemite Valley",
+      "weather": "warm",
+      "imageUrl": "https://th-thumbnailer.cdn-si-edu.com/C1UOdYgsTDPNWYLeGb9yq9oV-js=/1000x750/filters:no_upscale()/https://tf-cmsv2-smithsonianmag-media.s3.amazonaws.com/filer/ed/c7/edc72864-ec48-4e50-9d96-62179ea7921b/42-56717526.jpg",
+      "_id": 29
     }
   ]
 }

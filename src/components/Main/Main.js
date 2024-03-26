@@ -30,25 +30,6 @@ const Main = ({ weatherTemp, onSelectCard, data }) => {
   }, [currentTemperatureUnit, temp]);
   console.log(weatherType);
 
-  // the calculation on the weather type has to
-  // change you have to add a second one
-  // that will be checking for F vs C
-  // const filteredCards = data.filter((item) => {
-  //   return item.weather.toLowerCase() === weatherType;
-  // });
-
-  const [filteredCards, setFilteredCards] = useState([]);
-
-  useEffect(() => {
-    if (!data) return;
-
-    const fc = data.filter((item) => {
-      return item.weather.toLowerCase() === weatherType;
-    });
-
-    setFilteredCards(fc);
-  }, [data]);
-
   return (
     <main className="main">
       <WeatherCard
@@ -61,9 +42,15 @@ const Main = ({ weatherTemp, onSelectCard, data }) => {
       <section className="card__section" id="card-section">
         Today is {temp}° {currentTemperatureUnit} / You may want to wear:
         <div className="card__items">
-          {filteredCards.map((item) => (
-            <ItemCard key={item._id} item={item} onSelectCard={onSelectCard} />
-          ))}
+          {data
+            .filter((item) => item.weather.toLowerCase() === weatherType)
+            .map((item) => (
+              <ItemCard
+                key={item._id}
+                item={item}
+                onSelectCard={onSelectCard}
+              />
+            ))}
         </div>
       </section>
     </main>
