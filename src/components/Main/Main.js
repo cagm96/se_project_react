@@ -32,12 +32,7 @@ const Main = ({ weatherTemp, onSelectCard, data }) => {
 
   return (
     <main className="main">
-      <WeatherCard
-        day={false}
-        type="cloudy"
-        weatherTemp={temp}
-        temperatureUnit={currentTemperatureUnit}
-      />
+      <WeatherCard day={false} type="cloudy" weatherTemp={temp} />
 
       <section className="card__section" id="card-section">
         Today is {temp}° {currentTemperatureUnit} / You may want to wear:

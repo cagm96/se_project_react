@@ -4,6 +4,8 @@ import "../Profile/Profile.css";
 import ItemCard from "../ItemCard/ItemCard";
 
 const Profile = ({ openModal, data, onSelectCard }) => {
+  //You need to include the SideBar component  in the Profile component.
+  //You need to include the ClothesSection component  in the Profile component.
   return (
     <div className="profile">
       <div className="profile__side-bar">
