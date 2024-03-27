@@ -97,58 +97,52 @@
       "imageUrl": "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/wtwr-project/T-Shirt.png?etag=44ed1963c44ab19cd2f5011522c5fc09"
     },
     {
-      "name": "Yosemite Valley",
-      "weather": "warm",
+      "name": "Puerto Rico ",
+      "weather": "hot",
       "imageUrl": "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/around-project/yosemite.jpg",
-      "_id": 22
+      "_id": 40
     },
     {
-      "name": "Yosemite Valley",
+      "name": "Lago di Braies",
+      "weather": "hot",
+      "imageUrl": "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/around-project/latemar.jpg",
+      "_id": 41
+    },
+    {
+      "name": "Puerto Rico ",
+      "weather": "hot",
+      "imageUrl": "https://imgs.michaels.com/MAM/assets/1/726D45CA1C364650A39CD1B336F03305/img/89929EBC63DE42EA9701E67C8B731990/10460172.jpg",
+      "_id": 50
+    },
+    {
+      "name": "shirt",
+      "weather": "warm",
+      "imageUrl": "https://imgs.michaels.com/MAM/assets/1/726D45CA1C364650A39CD1B336F03305/img/89929EBC63DE42EA9701E67C8B731990/10460172.jpg",
+      "_id": 51
+    },
+    {
+      "name": "shirt",
+      "weather": "warm",
+      "imageUrl": "https://imgs.michaels.com/MAM/assets/1/726D45CA1C364650A39CD1B336F03305/img/89929EBC63DE42EA9701E67C8B731990/10460172.jpg",
+      "_id": 52
+    },
+    {
+      "name": "shirt",
+      "weather": "warm",
+      "imageUrl": "https://imgs.michaels.com/MAM/assets/1/726D45CA1C364650A39CD1B336F03305/img/89929EBC63DE42EA9701E67C8B731990/10460172.jpg",
+      "_id": 53
+    },
+    {
+      "name": "Lago di Braies",
       "weather": "warm",
       "imageUrl": "https://th-thumbnailer.cdn-si-edu.com/C1UOdYgsTDPNWYLeGb9yq9oV-js=/1000x750/filters:no_upscale()/https://tf-cmsv2-smithsonianmag-media.s3.amazonaws.com/filer/ed/c7/edc72864-ec48-4e50-9d96-62179ea7921b/42-56717526.jpg",
-      "_id": 23
+      "_id": 54
     },
     {
-      "name": "Yosemite Valley",
-      "weather": "warm",
-      "imageUrl": "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/around-project/yosemite.jpg",
-      "_id": 24
-    },
-    {
-      "name": "Yosemite Valley",
-      "weather": "warm",
-      "imageUrl": "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/around-project/yosemite.jpg",
-      "_id": 25
-    },
-    {
-      "name": "Yosemite Valley",
-      "weather": "warm",
-      "imageUrl": "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/around-project/yosemite.jpg",
-      "_id": 26
-    },
-    {
-      "name": "Yosemite Valley",
-      "weather": "warm",
-      "imageUrl": "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/around-project/yosemite.jpg",
-      "_id": 27
-    },
-    {
-      "name": "Yosemite Valley",
-      "weather": "warm",
-      "imageUrl": "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/around-project/yosemite.jpg",
-      "_id": 28
-    },
-    {
-      "name": "Yosemite Valley",
+      "name": "Lago di Braies",
       "weather": "warm",
       "imageUrl": "https://th-thumbnailer.cdn-si-edu.com/C1UOdYgsTDPNWYLeGb9yq9oV-js=/1000x750/filters:no_upscale()/https://tf-cmsv2-smithsonianmag-media.s3.amazonaws.com/filer/ed/c7/edc72864-ec48-4e50-9d96-62179ea7921b/42-56717526.jpg",
-      "_id": 29
-    },
-    {
-      "name": "Yosemite Valley",
-      "weather": "warm",
-      "imageUrl": "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/around-project/yosemite.jpg",
-      "_id": 30
+      "_id": 55
     }
   ]
 }

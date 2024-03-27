@@ -64,10 +64,11 @@ function App() {
     if (currentTemperatureUnit === "C") setCurrentTemperatureUnit("F");
     if (currentTemperatureUnit === "F") setCurrentTemperatureUnit("C");
   };
-  const cardList = document.querySelector(".card__items");
+
   const handleAddItemSubmit = (data) => {
+    console.log(data);
     addItem(data).then((res) => {
-      setClothingItems(data);
+      setClothingItems((prevItems) => [...prevItems, data]);
     });
   };
 
