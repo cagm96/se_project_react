@@ -8,7 +8,7 @@ import ConfirmationModal from "../ConfirmationModal/ConfirmationModa";
 import { useEffect, useState } from "react";
 import { getForecastWeather } from "../../utils/WeatherApi";
 import { parseWeatherData } from "../../utils/WeatherApi";
-import { currentTemperatureUnitContext } from "../../contexts/CurrentTemperatureUnitContext";
+import { CurrentTemperatureUnitContext } from "../../contexts/CurrentTemperatureUnitContext";
 import { Switch, Route } from "react-router-dom/cjs/react-router-dom.min";
 import Profile from "../Profile/Profile";
 import { getItemList, removeItem, addItem } from "../../utils/api";
@@ -89,7 +89,7 @@ function App() {
   console.log(temp);
   return (
     <div>
-      <currentTemperatureUnitContext.Provider
+      <CurrentTemperatureUnitContext.Provider
         value={{ currentTemperatureUnit, handleToggleSwitchChange }}
       >
         <Header onCreateModal={handleCreateModal} city={city} />
@@ -133,7 +133,7 @@ function App() {
             handleCardDelete={handleCardDelete}
           />
         )}
-      </currentTemperatureUnitContext.Provider>
+      </CurrentTemperatureUnitContext.Provider>
     </div>
   );
 }
