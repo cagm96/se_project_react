@@ -47,12 +47,6 @@ function App() {
   };
 
   const handleCardDelete = () => {
-    // This handler makes the API call.
-    // After a successful API request,
-    // the clothingItems state needs to be updated,
-    // the modals closed,
-    // and the state containing the card should be reset.
-
     removeItem(selectedCard._id).then((responseData) => {
       handleCloseModal();
       const card = document.getElementById(selectedCard._id);
@@ -67,9 +61,14 @@ function App() {
 
   const handleAddItemSubmit = (data) => {
     console.log(data);
-    addItem(data).then((res) => {
-      setClothingItems((prevItems) => [...prevItems, data]);
-    });
+    addItem(data)
+      .then((res) => {
+        console.log(res);
+        setClothingItems((prevItems) => [res, ...prevItems]);
+      })
+      .then(() => {
+        handleCloseModal();
+      });
   };
 
   useEffect(() => {

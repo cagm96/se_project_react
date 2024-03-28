@@ -5,6 +5,7 @@ const AddItemModal = ({ handleCloseModal, onAddItem, isOpen }) => {
   const [name, setName] = useState("");
   const [imageUrl, setImageUrl] = useState("");
   const [weather, setWeather] = useState("");
+
   const handleNameChange = (e) => {
     console.log(e.target.value);
     setName(e.target.value);
@@ -20,8 +21,13 @@ const AddItemModal = ({ handleCloseModal, onAddItem, isOpen }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     onAddItem({ name: name, imageUrl: imageUrl, weather: weather });
-    console.log(e);
-    handleCloseModal();
+    //   .then(() => {
+    //     handleCloseModal();
+    //   })
+    //   .catch((error) => {
+    //     console.error("Error:", error);
+    //   });
+    // console.log(e);
   };
   return (
     <ModalWithForm
@@ -43,6 +49,7 @@ const AddItemModal = ({ handleCloseModal, onAddItem, isOpen }) => {
           maxLength="30"
           placeholder="Name"
           id="nameInput"
+          value={name}
           onChange={handleNameChange}
         />
         <label className="modal__label" htmlFor="urlInput">
@@ -55,6 +62,7 @@ const AddItemModal = ({ handleCloseModal, onAddItem, isOpen }) => {
           minLength="1"
           placeholder="Image URL"
           id="urlInput"
+          value={imageUrl}
           onChange={handleUrlChange}
         />
       </div>
@@ -108,34 +116,3 @@ const AddItemModal = ({ handleCloseModal, onAddItem, isOpen }) => {
 };
 
 export default AddItemModal;
-
-// import React from 'react';
-// import './FoodAdder.css';
-
-// class FoodAdder extends React.Component {
-//   constructor(props) {
-//     super(props);
-//     this.state = {
-//       food: '',
-//       calories: ''
-//     };
-//     this.handleChange = this.handleChange.bind(this);
-//     this.handleSubmit = this.handleSubmit.bind(this);
-//   }
-
-//   handleChange = (e) => {
-//     this.setState({
-//       [e.target.name]: e.target.value
-//     })
-//   }
-
-//   handleSubmit = (e) => {
-//     e.preventDefault();
-
-//     this.setState({
-//       food: '',
-//       calories: ''
-//     })
-
-//     this.props.handleSubmit(this.state.food, this.state.calories);
-//   }
