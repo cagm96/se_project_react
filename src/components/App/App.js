@@ -51,12 +51,12 @@ function App() {
     //  and saves a card to delete in the state
   };
 
-  const handleCardDelete = () => {
+  const handleCardDelete = (card) => {
     removeItem(selectedCard._id)
       .then((responseData) => {
         handleCloseModal();
 
-        removeItem(selectedCard);
+        removeItem(card);
         console.log(responseData);
       })
       .catch((res) => {
@@ -98,6 +98,7 @@ function App() {
         console.log(`Error ${res}`);
       });
   }, []);
+  console.log(selectedCard);
   console.log(temp);
   return (
     <CurrentTemperatureUnitContext.Provider

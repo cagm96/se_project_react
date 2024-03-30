@@ -4,7 +4,7 @@ import { useContext, useMemo } from "react";
 import "../Main/Main.css";
 import { CurrentTemperatureUnitContext } from "../../contexts/CurrentTemperatureUnitContext";
 import { useEffect, useState } from "react";
-const Main = ({ weatherTemp, onSelectCard, data }) => {
+const Main = ({ weatherTemp, onSelectCard, data, handleDelete }) => {
   const { currentTemperatureUnit } = useContext(CurrentTemperatureUnitContext);
   const temp = weatherTemp[currentTemperatureUnit];
 

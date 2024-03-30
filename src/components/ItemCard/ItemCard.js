@@ -1,8 +1,9 @@
 import "./ItemCard.css";
-
+import React, { useRef } from "react";
 const ItemCard = ({ item, onSelectCard }) => {
+  const card = useRef();
   return (
-    <div className="card" id={item._id}>
+    <div className="card" id={item._id} ref={card}>
       <div>
         <img
           src={item.imageUrl}

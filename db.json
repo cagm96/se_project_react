@@ -61,12 +61,6 @@
       "imageUrl": "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/wtwr-project/Sunglasses.png?etag=a1bced9e331d36cb278c45df51150432"
     },
     {
-      "_id": 15,
-      "name": "Sweatshirt",
-      "weather": "warm",
-      "imageUrl": "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/wtwr-project/Sweatshirt.png?etag=008a9674757bea2e0bdb31242e364be0"
-    },
-    {
       "_id": 16,
       "name": "T-Shirt",
       "weather": "hot",
@@ -95,12 +89,6 @@
       "weather": "warm",
       "imageUrl": "https://th-thumbnailer.cdn-si-edu.com/C1UOdYgsTDPNWYLeGb9yq9oV-js=/1000x750/filters:no_upscale()/https://tf-cmsv2-smithsonianmag-media.s3.amazonaws.com/filer/ed/c7/edc72864-ec48-4e50-9d96-62179ea7921b/42-56717526.jpg",
       "_id": 56
-    },
-    {
-      "name": "Puerto Rico ",
-      "weather": "warm",
-      "imageUrl": "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/around-project/latemar.jpg",
-      "_id": 57
     }
   ]
 }
