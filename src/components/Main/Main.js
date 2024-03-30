@@ -1,12 +1,12 @@
 import WeatherCard from "../WeatherCard/WeatherCard";
 import ItemCard from "../ItemCard/ItemCard";
-import { useContext, useMemo } from "react";
+import { useContext, useMemo, forwardRef } from "react";
 import "../Main/Main.css";
 import { CurrentTemperatureUnitContext } from "../../contexts/CurrentTemperatureUnitContext";
 import { useEffect, useState } from "react";
-const Main = ({ weatherTemp, onSelectCard, data, handleDelete }) => {
+const Main = forwardRef(({ props, ref }) => {
   const { currentTemperatureUnit } = useContext(CurrentTemperatureUnitContext);
-  const temp = weatherTemp[currentTemperatureUnit];
+  const temp = props.weatherTemp[currentTemperatureUnit];
 
   console.log(temp);
   const weatherType = useMemo(() => {
@@ -37,19 +37,20 @@ const Main = ({ weatherTemp, onSelectCard, data, handleDelete }) => {
       <section className="card__section" id="card-section">
         Today is {temp}° {currentTemperatureUnit} / You may want to wear:
         <div className="card__items">
-          {data
+          {props.data
             .filter((item) => item.weather.toLowerCase() === weatherType)
             .map((item) => (
               <ItemCard
                 key={item._id}
                 item={item}
-                onSelectCard={onSelectCard}
+                onSelectCard={props.onSelectCard}
+                ref={ref}
               />
             ))}
         </div>
       </section>
     </main>
   );
-};
-
+});
+// weatherTemp, onSelectCard, data, handleDelete,
 export default Main;

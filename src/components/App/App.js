@@ -50,13 +50,13 @@ function App() {
     setActiveModal("question");
     //  and saves a card to delete in the state
   };
-
+  const cardMarkUp = useRef(null);
   const handleCardDelete = (card) => {
     removeItem(selectedCard._id)
       .then((responseData) => {
         handleCloseModal();
-
-        removeItem(card);
+        console.log(cardMarkUp);
+        removeItem(cardMarkUp);
         console.log(responseData);
       })
       .catch((res) => {
@@ -112,6 +112,7 @@ function App() {
             weatherTemp={temp}
             onSelectCard={handleSelectedCard}
             data={clothingItems}
+            ref={cardMarkUp}
           />
         </Route>
         <Route path="/profile">

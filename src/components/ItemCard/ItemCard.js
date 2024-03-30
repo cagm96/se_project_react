@@ -1,9 +1,8 @@
 import "./ItemCard.css";
-import React, { useRef } from "react";
-const ItemCard = ({ item, onSelectCard }) => {
-  const card = useRef();
+import React, { useRef, forwardRef } from "react";
+const ItemCard = forwardRef(({ item, onSelectCard, ref }) => {
   return (
-    <div className="card" id={item._id} ref={card}>
+    <div className="card" id={item._id} ref={ref}>
       <div>
         <img
           src={item.imageUrl}
@@ -17,6 +16,6 @@ const ItemCard = ({ item, onSelectCard }) => {
       </h3>
     </div>
   );
-};
+});
 
 export default ItemCard;
