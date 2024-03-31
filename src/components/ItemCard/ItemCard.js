@@ -1,6 +1,6 @@
 import "./ItemCard.css";
 import React, { useRef, forwardRef } from "react";
-const ItemCard = forwardRef(({ item, onSelectCard, ref }) => {
+const ItemCard = forwardRef(({ item, onSelectCard }, ref) => {
   return (
     <div className="card" id={item._id} ref={ref}>
       <div>

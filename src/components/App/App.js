@@ -17,13 +17,11 @@ function App() {
   const [activeModal, setActiveModal] = useState("");
   const [selectedCard, setSelectedCard] = useState({});
   const [temp, setTemp] = useState([]);
-
   const [city, setCity] = useState("");
   const [currentTemperatureUnit, setCurrentTemperatureUnit] = useState("F");
-
   const [clothingItems, setClothingItems] = useState([]);
-  const testRef = useRef(null);
-  console.log(testRef);
+  const cardMarkUp = useRef();
+
   useEffect(() => {
     getItemList()
       .then((responseData) => {
@@ -50,13 +48,13 @@ function App() {
     setActiveModal("question");
     //  and saves a card to delete in the state
   };
-  const cardMarkUp = useRef(null);
+
   const handleCardDelete = (card) => {
     removeItem(selectedCard._id)
       .then((responseData) => {
         handleCloseModal();
         console.log(cardMarkUp);
-        removeItem(cardMarkUp);
+        cardMarkUp.remove();
         console.log(responseData);
       })
       .catch((res) => {
