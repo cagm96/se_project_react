@@ -1,6 +1,6 @@
 import "../ConfirmationModal/ConfirmationModal.css";
 
-const ConfirmationModal = ({ selectedCard, onClose, handleCardDelete }) => {
+const ConfirmationModal = ({ onClose, handleCardDelete }) => {
   return (
     <div className="modal">
       <div className="modal__confirmation-sec">

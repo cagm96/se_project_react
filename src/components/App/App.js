@@ -20,7 +20,6 @@ function App() {
   const [city, setCity] = useState("");
   const [currentTemperatureUnit, setCurrentTemperatureUnit] = useState("F");
   const [clothingItems, setClothingItems] = useState([]);
-  const cardMarkUp = useRef();
 
   useEffect(() => {
     getItemList()
@@ -53,9 +52,9 @@ function App() {
     removeItem(selectedCard._id)
       .then((responseData) => {
         handleCloseModal();
-        console.log(cardMarkUp);
-        cardMarkUp.remove();
-        console.log(responseData);
+        setClothingItems((prevItems) =>
+          prevItems.filter((item) => item._id !== selectedCard._id)
+        );
       })
       .catch((res) => {
         console.log(`Error ${res}`);
@@ -110,7 +109,6 @@ function App() {
             weatherTemp={temp}
             onSelectCard={handleSelectedCard}
             data={clothingItems}
-            ref={cardMarkUp}
           />
         </Route>
         <Route path="/profile">
