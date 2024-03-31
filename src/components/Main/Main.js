@@ -1,33 +1,26 @@
 import WeatherCard from "../WeatherCard/WeatherCard";
 import ItemCard from "../ItemCard/ItemCard";
-import { useContext, useMemo, forwardRef } from "react";
+import { useContext, useMemo } from "react";
 import "../Main/Main.css";
 import { CurrentTemperatureUnitContext } from "../../contexts/CurrentTemperatureUnitContext";
-import { useEffect, useState } from "react";
+
 const Main = ({ weatherTemp, onSelectCard, data }) => {
   const { currentTemperatureUnit } = useContext(CurrentTemperatureUnitContext);
   const temp = weatherTemp[currentTemperatureUnit];
+  const tempF = weatherTemp.F;
 
+  console.log(weatherTemp);
   console.log(temp);
+
   const weatherType = useMemo(() => {
-    if (currentTemperatureUnit === "F") {
-      if (temp >= 86) {
-        return "hot";
-      } else if (temp >= 66 && temp <= 85) {
-        return "warm";
-      } else if (temp >= 65) {
-        return "cold";
-      }
-    } else if (currentTemperatureUnit === "C") {
-      if (temp >= 30) {
-        return "hot";
-      } else if (temp >= 18.8889 && temp <= 29.4444) {
-        return "warm";
-      } else if (temp >= 18.3333) {
-        return "cold";
-      }
+    if (tempF >= 86) {
+      return "hot";
+    } else if (tempF >= 66) {
+      return "warm";
+    } else {
+      return "cold";
     }
-  }, [currentTemperatureUnit, temp]);
+  });
   console.log(weatherType);
 
   return (
