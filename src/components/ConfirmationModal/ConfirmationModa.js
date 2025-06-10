@@ -1,4 +1,5 @@
 import "../ConfirmationModal/ConfirmationModal.css";
+import React from 'react';
 
 const ConfirmationModal = ({ onClose, handleCardDelete }) => {
   return (

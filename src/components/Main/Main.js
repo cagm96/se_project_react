@@ -1,4 +1,5 @@
 import WeatherCard from "../WeatherCard/WeatherCard";
+import React from 'react';
 import ItemCard from "../ItemCard/ItemCard";
 import { useContext, useMemo } from "react";
 import "../Main/Main.css";

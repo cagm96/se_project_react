@@ -1,4 +1,5 @@
 import { handleServerResponse } from "./api";
+import React from 'react';
 const latitude = 25.50705777360072; //44.34;
 const longitude = -80.40294381900377; // 10.99;
 const APIkey = "c9d134f3fc944ec4c4b97662c228c60c";

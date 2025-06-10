@@ -1,4 +1,5 @@
 import ItemCard from "../ItemCard/ItemCard";
+import React from 'react';
 import "../ClothesSection/ClothesSection.css";
 const ClothesSection = ({ openModal, data, onSelectCard }) => {
   return (

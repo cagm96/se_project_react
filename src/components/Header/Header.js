@@ -1,4 +1,5 @@
 import "./Header.css";
+import React from 'react';
 import avatar from "../../images/avatar.svg";
 import headerLogo from "../../images/logo.svg";
 import ToggleSwitch from "../ToggleSwitch/ToggleSwitch";

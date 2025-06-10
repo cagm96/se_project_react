@@ -1,5 +1,5 @@
 import "./ModalWithForm.css";
-
+import React from 'react';
 const ModalWithForm = ({
   children,
   buttonText,
